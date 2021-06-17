@@ -52,4 +52,7 @@ def getAPI():
 
 
 tweeter_api = getAPI()
-
+#new_search = search_words + " -filter:retweets"
+tweets = tweepy.Cursor(tweeter_api.search, q="no to vaccine"+" -filter:retweets", lang="en", since="2021-01-1").items(50)
+for tweet in tweets:
+    print(tweet.text)
