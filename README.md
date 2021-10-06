@@ -9,3 +9,6 @@ OneDrive Link:
 
 When the getTweets.py module is executed, it will ask for an encryption key, which will allow you to use my Tweeter API access keys to collect tweets. If you are authorized, you can use my tweeter tokens using the key. Otherwise, please collect a Tweeter developer account and use your own keys.
 Else, one is welcomed to download the data from my OneDrive and use it. 
+<br>
+<br>
+For more information please take a look at "Vaccine_Sentiment_Analysis_Report.pdf" file.
