@@ -1,6 +1,8 @@
 import sys
 import subprocess
 from os import path
+import csv
+
 
 # Importing apiToken module
 try:
@@ -50,9 +52,31 @@ def getAPI():
             return getAPI()
 
 
+def write_to_csv(new_data, filename='data/raw_test.csv'):
+    with open(filename, 'a', newline='') as outfile:
+        writer = csv.writer(outfile)
+        writer.writerow(new_data)
+        
 
 tweeter_api = getAPI()
-#new_search = search_words + " -filter:retweets"
-tweets = tweepy.Cursor(tweeter_api.search, q="no to vaccine"+" -filter:retweets", lang="en", since="2021-01-1").items(50)
-for tweet in tweets:
-    print(tweet.text)
+search_words = ["BioNTech", "Moderna", "Covishield", "AstraZeneca", "Sputnik V", "Convidicea", "EpiVacCorona",
+            "Johnson & Johnson vaccine", "Sputnik Light", "PakVac", "Ad5-nCoV", "Sinovac vaccine", "Sinopharm vaccine",
+            "Pfizer Vaccine", "Comirnaty Vaccine", "Covaxin Vaccine", "Bharat Biotech Vaccine"]
+
+
+for search_word in search_words:
+    
+    api_search = search_word + " -filter:retweets"
+    tweets = tweepy.Cursor(tweeter_api.search, q=api_search).items(10000)
+
+    for tweet in tweets:
+        
+        if tweet.text != '':
+            tweet_data = [search_word, tweet.text, tweet.user.location, tweet.user.verified, tweet.lang, tweet.user.followers_count]
+            try:
+                write_to_csv(tweet_data)
+            except:
+                pass
+        
+        else:
+            pass

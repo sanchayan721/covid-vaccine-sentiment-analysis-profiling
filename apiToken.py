@@ -20,10 +20,10 @@ def getKeys(console_entry = bool()):
     if not console_entry:
         raw_entry = input("\nAre you authorized to use Sanchayan's Twitter API Tokens? ... [Yes/no] ")
         
-        if raw_entry.lower() in ['true', '1', 't', 'y', 'yes', 'yeah', 'yup']:
+        if raw_entry.lower() in ['true', '1', 't', 'y', 'yes', 'yeah', 'yup', 'ye']:
             console_entry = True
         
-        elif raw_entry.lower() in ['no', '0', 'not', 'false', 'none', 'n', 'f']:
+        elif raw_entry.lower() in ['no', '0', 'not', 'false', 'none', 'n', 'f', 'fls', 'fals']:
             console_entry = False
         
         else:
@@ -31,16 +31,16 @@ def getKeys(console_entry = bool()):
             return getKeys()
             
 
-    if console_entry == True and not path.exists("tokens.encrypted"):
+    if console_entry == True and not path.exists("key/tokens.encrypted"):
         print("\nError: Sanchayan's encrypted token file is missing. \nPlease try with your own API keys.")
         return getKeys(console_entry = False)
 
-    elif console_entry == True and path.exists("tokens.encrypted"):
+    elif console_entry == True and path.exists("key/tokens.encrypted"):
 
         decryption_key = input("\nPlease Enter The Decryption Key Provided by Sanchayan: ")
         
         try:
-            with open('tokens.encrypted', 'rb') as encrypted_file:
+            with open('key/tokens.encrypted', 'rb') as encrypted_file:
 
                 decrypted_content = Fernet(decryption_key).decrypt(encrypted_file.read())
             
