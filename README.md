@@ -1,3 +1,16 @@
+## Goal
+The goal of this project is to collect tweets written in English, German
+and French from Twitter and applying some of the ETL techniques to clean the text and analyse the sentiment of those tweets,
+then by using some of the other techniques learnt from previous courses
+in my master's curriculum to find out the distributions of sentiments
+for different vaccines and also to find out any co-relation between
+different types of twitter users namely "verified" ones who are usually
+celebrates and well known people in their respective communities and
+non-verified ones, the general public. Other important goals of this
+project includes to find out heat-maps of vaccine hesitancy and vaccine
+decisiveness around the globe and if possible to find out which are the
+most popular vaccines in the different parts of the world.
+
 ## Entry point
 Please start from "Vaccine_Sentiment_Analysis_Report.pdf" file.
 
