@@ -6,8 +6,8 @@ As the Covid-19 pandemic continues to persist in the world the only way out of t
 
 Sentiment analysis on social media has been performed in multiple occasions earlier by organizations to find out opinion about many health related issues in past. Which brings us to the aim of this project which is to find out that difference in opinions from people living in different part of the world about popular vaccines in use.
 
-## Read More ...
-[![Project Pipeline](sentiment_pipeline.svg "Project Pipeline (Click to read more)")](https://1drv.ms/b/s!ApUwC0uDWXPNhak7SO4WfiuNtqiGnQ?e=pui80U)
+## Project Pipeline
+[![Project Pipeline](sentiment_pipeline_readme.png "Click to Read the Report")](https://1drv.ms/b/s!ApUwC0uDWXPNhak7SO4WfiuNtqiGnQ?e=pui80U)
 
 ## Important Notes
 
